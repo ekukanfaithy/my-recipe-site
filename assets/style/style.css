@@ -1,0 +1,212 @@
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --primary-color: #d35400; /* Jollof color */
+    --secondary-color: #2c3e50; /* Dark Blue/Grey for text */
+    --accent-color: #f39c12; /* Golden yellow */
+    --bg-color: #fdf2e9; /*background */
+    --card-bg: #ffffff;
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- 2. Layout & Container --- */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--primary-color);
+}
+
+/* --- 3. Typography and Font --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* --- 4. Header Section --- */
+header p em {
+    display: block;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- 5. Image & Download Section --- */
+.image-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.02);
+}
+
+/* Styling the download link as a button */
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* --- 6. Recipe Details (Flexbox) --- */
+.recipe-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff8f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.detail-item {
+    flex: 1 1 45%; 
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+/* --- 7. Ingredients & Instructions --- */
+section {
+    margin-bottom: 30px;
+}
+
+/* Unordered List (Ingredients) */
+ul {
+    list-style-type: none; 
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* --Custom bullet using pseudo-element-- */
+ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+ul li:hover {
+    background-color: #fafafa;
+}
+
+/* --Ordered List (Instructions)-- */
+ol {
+    counter-reset: my-counter;
+    list-style: none;
+}
+
+ol li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+ol li::before {
+    counter-increment: my-counter;
+    content: counter(my-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+/* --- 8. Tips & Nutrition --- */
+.tip-section {
+    background-color: #e8f6f3;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed #1abc9c;
+}
+
+article {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+article h2 {
+    color: var(--accent-color);
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+/* --- 9. Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
